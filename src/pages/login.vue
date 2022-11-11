@@ -17,6 +17,10 @@
                     <!--div class="flex align-items-center justify-content-center bg-blue-100 border-round" style="width:2.5rem;height:2.5rem">
                         <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
                     </div-->
+					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
+					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
+					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
+					</div>
                 </div>
                 <span class="text-green-500 font-medium">+ 20 добавились</span>
                 <span class="text-500">за последний час</span>
@@ -34,9 +38,10 @@
 						и получать стабильный доход занимаясь в своё свободное время
 						</div>
                     </div>
-                    <!--div class="flex align-items-center justify-content-center bg-orange-100 border-round" style="width:2.5rem;height:2.5rem">
-                        <i class="pi pi-map-marker text-orange-500 text-xl"></i>
-                    </div-->
+					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
+					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
+					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
+					</div>
                 </div>
                 <span class="text-green-500 font-medium">+ 1000</span>
                 <span class="text-500">уникальных работ и документов</span>
@@ -54,9 +59,10 @@
 						и получить доступ ко всем возможностям платформы как VIP*
 						</div>
                     </div>
-                    <!--div class="flex align-items-center justify-content-center bg-orange-100 border-round" style="width:2.5rem;height:2.5rem">
-                        <i class="pi pi-map-marker text-orange-500 text-xl"></i>
-                    </div-->
+					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
+					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
+					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
+					</div>
                 </div>
                 <span class="text-green-500 font-medium">+ 1000</span>
                 <span class="text-500">уникальных работ и документов</span>

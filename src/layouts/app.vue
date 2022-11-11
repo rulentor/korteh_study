@@ -1,13 +1,22 @@
 <template>
 	<div :class="containerClass" @click="onWrapperClick">
-        <!--Sidebar v-model:visible="addAmbassadorOrder" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
+        <Sidebar v-model:visible="addAmbassadorOrder" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
           <AddAmbassador />
         </Sidebar>	
         <Sidebar v-model:visible="addSupportTicket" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
           <AddSupport />
-        </Sidebar-->			
+        </Sidebar>			
         <Sidebar v-model:visible="visibleOrder" :baseZIndex="10000" position="right" class="p-sidebar-lg">
-          <ShowTasks />
+          <h3>Сделанные работы</h3>
+		  <div class="card">
+            <h5>Архив всех заказов за текущий период</h5>
+            <TreeTable :value="nodes" responsiveLayout="scroll">
+                <Column field="name" header="Название" :expander="true" style="min-width:200px"></Column>
+                <Column field="size" header="Исполнитель" style="min-width:200px"></Column>
+                <Column field="type" header="Статус" style="min-width:100px"></Column>
+                <Column field="action_chat" header="Чат" style="min-width:60px"></Column>				
+            </TreeTable>
+          </div>
         </Sidebar>	
 	
         <AppTopBar @menu-toggle="onMenuToggle" />
@@ -30,15 +39,18 @@
 </template>
 
 <script async setup lang='ts'>
+import { ref, reactive, onMounted } from 'vue'
+//import NodeService from './service/NodeService'
 
-
+const NodeService = null
 const layoutMode = ref('static')
 const staticMenuInactive = ref(false)
 const overlayMenuActive = ref(false)
 const mobileMenuActive = ref(false)
 const menuActive = ref(false)
 const menuClick = ref(false)
-
+const nodes = ref()
+const nodeService = ref(new NodeService())
 // show state
 const visibleOrder = ref(false)
 const visibleSupport = ref(false)
@@ -46,7 +58,7 @@ const addAmbassadorOrder = ref(false)
 const addSupportTicket = ref(false)
 
 onMounted(() => {
-
+ //nodeService.value.getTreeTableNodes().then(data => nodes.value = data)
 })
 
 const menuData = [
@@ -59,11 +71,14 @@ const menuData = [
                             to: '/',
                         },
 						{   label: 'Сделать заказ', 
-						    icon: 'pi pi-fw pi-plus', 
-							to: '/ambassador-add',
+						    icon: 'pi pi-fw pi-sitemap', 
+                            command: () => {
+                                //window.location = 'https://github.com/primefaces/sakai-vue';
+								addAmbassadorOrder.value = true
+                            },
 						},						
 						{   label: 'Сделанные работы', 
-						    icon: 'pi pi-fw pi-book', 
+						    icon: 'pi pi-fw pi-sitemap', 
                             command: () => {
                                 //window.location = 'https://github.com/primefaces/sakai-vue';
 								visibleOrder.value = true
@@ -85,8 +100,11 @@ const menuData = [
                         },
                         {
                             label: 'Техническая поддержка',
-                            icon: 'pi pi-fw pi-cog', //envelope
-							to: '/support-add',							
+                            icon: 'pi pi-fw pi-envelope',
+                            command: () => {
+                                //window.location = 'https://github.com/primefaces/sakai-vue';
+								addSupportTicket.value = true
+                            },
                         },
                     ],
                 },
