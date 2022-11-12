@@ -6,9 +6,6 @@
         <Sidebar v-model:visible="addSupportTicket" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
           <AddSupport />
         </Sidebar-->			
-        <Sidebar v-model:visible="visibleOrder" :baseZIndex="10000" position="right" class="p-sidebar-lg">
-          <ShowTasks />
-        </Sidebar>	
 	
         <AppTopBar @menu-toggle="onMenuToggle" />
         <div class="layout-sidebar" @click="onSidebarClick">
@@ -40,7 +37,7 @@ const menuActive = ref(false)
 const menuClick = ref(false)
 
 // show state
-const visibleOrder = ref(false)
+//const visibleOrder = ref(false)
 const visibleSupport = ref(false)
 const addAmbassadorOrder = ref(false)
 const addSupportTicket = ref(false)
@@ -64,10 +61,7 @@ const menuData = [
 						},						
 						{   label: 'Сделанные работы', 
 						    icon: 'pi pi-fw pi-book', 
-                            command: () => {
-                                //window.location = 'https://github.com/primefaces/sakai-vue';
-								visibleOrder.value = true
-                            },
+							to: '/tasks'
 						},
 
 					
