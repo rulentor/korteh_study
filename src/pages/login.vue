@@ -9,9 +9,10 @@
             <div class="surface-card shadow-2 p-3 border-round">
                 <div class="flex justify-content-between mb-3">
                     <div>
-                        <span class="block text-500 font-medium mb-3">Стать амбассадором</span>
-                        <div class="text-900 font-medium text-xl">
-						и раньше своих однокурсников сдать диплом или курсовую и получить отличную оценку в зачётку
+                        <span class="block text-500 font-medium mb-3 text-center">Стать амбассадором</span>
+                        <div class="text-900 font-medium text-md">
+						<p>- Рекомендуй наш сервис и получай зарплату</p>
+						<p>- Заказ работ по большой скидке</p>
 						</div>
                     </div>
                     <!--div class="flex align-items-center justify-content-center bg-blue-100 border-round" style="width:2.5rem;height:2.5rem">
@@ -22,58 +23,16 @@
 					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
 					</div>
                 </div>
-                <span class="text-green-500 font-medium">+ 20 добавились</span>
-                <span class="text-500">за последний час</span>
+
 				<p>
 				<a href='/register' title="Стать амбассадором" class="p-button-outlined p-button-success">Стать амбассадором</a>
 				</p>
             </div>
         </div>
-        <div class="col-12 md:col-12 lg:col-12">
-            <div class="surface-card shadow-2 p-3 border-round">
-                <div class="flex justify-content-between mb-3">
-                    <div>
-                        <span class="block text-500 font-medium mb-3">Стать автором</span>
-                        <div class="text-900 font-medium text-xl">
-						и получать стабильный доход занимаясь в своё свободное время
-						</div>
-                    </div>
-					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
-					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
-					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
-					</div>
-                </div>
-                <span class="text-green-500 font-medium">+ 1000</span>
-                <span class="text-500">уникальных работ и документов</span>
-				<p>
-				<a href='/register' title="Стать автором" class="p-button-outlined p-button-success">Стать автором</a>
-				</p>			
-            </div>
-        </div>
-        <div class="col-12 md:col-12 lg:col-12">
-            <div class="surface-card shadow-2 p-3 border-round">
-                <div class="flex justify-content-between mb-3">
-                    <div>
-                        <span class="block text-500 font-medium mb-3">Стать пользователем</span>
-                        <div class="text-900 font-medium text-xl">
-						и получить доступ ко всем возможностям платформы как VIP*
-						</div>
-                    </div>
-					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
-					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
-					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
-					</div>
-                </div>
-                <span class="text-green-500 font-medium">+ 1000</span>
-                <span class="text-500">уникальных работ и документов</span>
-				<p>
-				<a href='/register' title="Стать пользователем" class="p-button-outlined p-button-success">Стать пользователем</a>
-				</p>				
-            </div>
-        </div>
+
 </div>		
 </div>
-<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-4">
     <div class="text-center mb-5">
         <!--img src="images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3"-->
         <div class="text-900 text-3xl font-medium mb-3">Вход в систему</div>
@@ -98,16 +57,37 @@
         <Button label="Войти" icon="pi pi-user" class="w-full" @click="router.push('/')"></Button>
     </div>
 </div>
-        <!--div class="col-8 md:col-8 lg:col-8 m-0 py-7 px-16" style="border-radius:6px; background: linear-gradient(180deg, var(--surface-50) 38.9%, var(--surface-0));">
-
-                    <div class="text-center mb-5">
-                        <div class="text-900 text-3xl font-medium mb-3">Диплом за час</div>
-                        <span class="text-600 font-medium">
-						  <router-link to="/login" class="">Вход
-						  </router-link>
-						</span>
+<div class="col-4 md:col-4 lg:col-4">
+<div class="no-grid">
+        <div class="col-12 md:col-12 lg:col-12">
+            <div class="surface-card shadow-2 p-3 border-round">
+                <div class="flex justify-content-between mb-3">
+                    <div>
+                        <span class="block text-500 font-medium mb-3 text-center">Стать амбассадором</span>
+                        <div class="text-900 font-medium text-md">
+						<p>- Процент 5% от суммы заказа</p>
+						<p>- Неограниченное количество заказов</p>
+						<p>- Анонимность автора и рейтинг</p>
+						<p>- Моментальные выплаты за сданный заказ</p>						
+						</div>
                     </div>
-		</div-->
+                    <!--div class="flex align-items-center justify-content-center bg-blue-100 border-round" style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
+                    </div-->
+					<div class="flex border-round align-items-center justify-content-top" style="width:2.5rem;height:auto">
+					<!--Chip label="" icon="pi pi-plus" class="mr-1 mb-1" /-->
+					<a href='/register'><i class="pi pi-plus text-blue-500 text-xl"></i></a>
+					</div>
+                </div>
+
+				<p>
+				<a href='/register' title="Стать амбассадором" class="p-button-outlined p-button-success">Стать автором</a>
+				</p>
+            </div>
+        </div>
+
+</div>		
+</div>
 </div>		
 </template>
 <script async setup lang='ts'>

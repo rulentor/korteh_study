@@ -106,8 +106,8 @@ export const install: UserModule = ({ app }) => {
     locale: {
       accept: 'Да',
       reject: 'Нет',
-	  monthNames: ['Ян','Фв'],
-	  dayNamesMin: 'Вс',
+	  monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	  dayNamesMin: 'Вс'
       //...
     }
 	})

@@ -9,7 +9,8 @@
         </Button>
 		
     <!--Button class="p-button-rounded p-button-text" icon="pi pi-user" type="button" label="" @click="toggle" aria-haspopup="true" aria-controls="topbar_menu" $emit('add-project', $event.target.value)/-->
-    <AppMenu v-if="topbarmenu_open" id="topbar-menu" ref="menu" :model="menuItems" :popup="true" />
+    <h4>Иванов Карп</h4>
+	<AppMenu v-if="topbarmenu_open" id="topbar-menu" ref="menu" :model="menuItems" :popup="true" />
 
 	<!--Menu id="overlay_menu" ref="menu" :model="menuItems" :popup="true" /-->
         <router-link to="/" class="layout-topbar-logo">
@@ -34,11 +35,14 @@
         </button>
         <ul class="layout-topbar-menu lg:flex origin-top">
             <li>
-               <span style="font-size: 1.2rem; margin-left:1rem">Диплом за час</span>
+               <button class="p-link layout-topbar-button">
+			     <i class="pi pi-sign-out"></i>
+			   </button>
             </li>
         </ul>			
-        <ul class="layout-topbar-menu md:hidden lg:flex origin-top" style='display:none !important'>
+        <!--ul class="layout-topbar-menu md:hidden lg:flex origin-top" style='display:none !important'>
             <li>
+			<span style="font-size: 1.2rem; margin-left:1rem">
                 <button class="p-link layout-topbar-button">
                     <i class="pi pi-calendar"></i>
                     <span>Events</span>
@@ -56,7 +60,7 @@
                     <span>Profile</span>
                 </button>
             </li>
-        </ul>
+        </ul-->
     </div>
 </template>
 <script async setup lang="ts">
