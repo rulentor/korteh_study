@@ -48,3 +48,7 @@ const go = () => {
     </div>
   </div>
 </template>
+<route lang="yaml">
+meta:
+  layout: single
+</route>

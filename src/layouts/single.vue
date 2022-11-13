@@ -1,5 +1,17 @@
 <template>
-  <router-view />
+	<div :class="containerClass" @click="onWrapperClick">
+        <div class="--layout-main-container">
+            <div class="layout-main">
+                <router-view />
+            </div>
+            <AppFooter />
+        </div>
+
+		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" />
+        <transition name="layout-mask">
+            <div class="layout-mask p-component-overlay" v-if="mobileMenuActive"></div>
+        </transition>
+	</div>
 </template>
 
 <script async setup lang='ts'>

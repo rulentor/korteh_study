@@ -9,3 +9,9 @@ body,
 html.dark {
   background: #121212;
 }
+.p-card .p-card-content {
+  padding: 0 !important;
+}
+.p-card .p-card-content h5{
+
+}

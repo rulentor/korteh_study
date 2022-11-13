@@ -3,110 +3,75 @@
 	    <ConfirmDialog/>
 		
         <div class="col-7 md:col-7">
-		  <div class="card p-fluid">
-            <div class="formgrid grid">
-			  <div class="field">
-				<label for="description">Расскажите подробнее о задании</label>
-				<Textarea id='description' v-model="description" :autoResize="true" rows="5" cols="30" />
-			  </div>			  
-			</div>
-
-<!--Главная, Мои заказы-->
-
-                    <h5>Уточнить детали заказа</h5>	
+					<Card class='text-center surface-card p-4 shadow-2 border-round w-full lg:w-12'>
+					<template #header>
+                        <div class="text-900 text-md font-medium mb-0">Добавить задание</div>
+					</template>
+					<template #content>
+                    <div class="field col">
+					    <!--label for="last_name" class="block text-900 text-md font-medium mb-1">Расскажите подробнее о задании</label-->
+						<Textarea id='description' class='p-inputtext-sm' v-model="state.description" placeholder="Расскажите подробнее о задании" :autoResize="true" rows="3" cols="30" />
+                    </div>
 					<div class="formgrid grid">
-					  <div class="col">
-					  <div class="field">
-						<label for="phone">Ваш телефон</label>
-						<InputText id="phone" type="text" :value="state.phone"/>
-                      </div>
-					  <div class="field">					  
-						<label for="job_type">Тип работы</label>
-            			<Dropdown v-model="state.job_type" :options="options.job_type" optionLabel="name" optionValue="id" placeholder="выберите" />	
-                      </div>
-					  <div class="field">	
-						<label for="title">Название работы</label>
-						<InputText id="title" type="text" :value="state.title"/>
-                      </div>
-					  <div class="field">							
-						<label for="tabs">Поля</label>
-						<InputText id="tabs" type="text" :value="state.tabs"/>	
-                      </div>
-					  <div class="field">							
-						<label for="interval">Интервал</label>
-						<InputText id="interval" type="text" :value="state.interval"/>	
-                      </div>
-					  <div class="field">							
-                        <label for="orygin">Оригинальность: {{ state.orygin }}</label>
+					  <div class="field col">
+						<!--label for="first_name" class="block text-900 text-md font-medium mb-1">Имя</label-->
+						<InputText id="phone" class='p-inputtext-sm mb-3' v-model="state.phone" type="text" placeholder="Ваш телефон" />
+            			<Dropdown class='p-inputtext-sm w-full mb-3' v-model="state.job_type" :options="options.job_type" optionLabel="name" optionValue="id" placeholder="Выберите тип работы" />
+						<InputText id="title" class='p-inputtext-sm mb-3' v-model="state.title" type="text" placeholder="Название работы" />
+						<InputText id="tabs" class='p-inputtext-sm mb-3' v-model="state.tabs" type="text" placeholder="Поля" />
+						<InputText id="interval" class='p-inputtext-sm mb-3' v-model="state.interval" type="text" placeholder="Интервал" />
+                        <label for="orygin" class='mb-3'>Оригинальность: {{ state.orygin }}</label>
                         <Slider v-model="state.orygin" />	
-                      </div>						
-    				  </div>
-					  <div class="col">
-					  <div class="field">						  
-						<label for="email">Email</label>
-						<InputText id="email" type="text" :value="state.email"/>
-                      </div>
-					  <div class="field">							
-						<label for="sciense">Дисциплина</label>
-						<InputText id="sciense" type="text" :value="state.sciense"/>
-                      </div>
-					  <div class="field">	
-						<label for="pages">Кол-во стр.</label>
-						<InputText id="pages" type="text" :value="state.pages"/>
-                      </div>
-					  <div class="field">							
-						<label for="font_name">Шрифт</label>
-            			<Dropdown v-model="state.font_name" :options="options.font_name" optionLabel="name" optionValue="id" placeholder="выберите" />	
-                      </div>
-					  <div class="field">	
-						<label for="font_size">Размер текста</label>
-            			<Dropdown v-model="state.font_size" :options="options.font_size" optionLabel="name" optionValue="id" placeholder="выберите" />	
 					  </div>
-					  <div class="field">	
-						<label for="file" class="ml-6">Загрузка файла</label>
+					  <div class="field col">
+						<InputText id="email" class='p-inputtext-sm mb-3' v-model="state.email" type="text" placeholder="Email" />
+						<InputText id="science" class='p-inputtext-sm mb-3' v-model="state.sciense" type="text" placeholder="Дисциплина" />
+						<InputText id="pages" class='p-inputtext-sm mb-3' v-model="state.pages" type="text" placeholder="Кол-во стр." />         
+                		<Dropdown class='p-inputtext-sm w-full mb-3' v-model="state.font_name" :options="options.font_name" optionLabel="name" optionValue="id" placeholder="Шрифт" />					
+                		<Dropdown class='p-inputtext-sm w-full mb-3' v-model="state.font_size" :options="options.font_size" optionLabel="name" optionValue="id" placeholder="Размер текста" />						
+                        <label for="orygin" class='mb-3'>Загрузка файла</label>					
                         <FileUpload name="file[]" :customUpload="true" @uploader="importUploader" mode="basic" ref='file' accept="" :maxFileSize="50000000000" label="Файл" chooseLabel="Файл" class="ml-6" :auto="true"/>					
-					  </div>					  
+					  </div>							  
+				    </div>
+                    <h5 class='m-0'>Срок сдачи</h5>	
+					<!--div class="formgrid grid"-->
+					  <div class="field col">
+						<label for="range" class='mb-3'>Выберите интервал от и до</label>
+						<Calendar class='p-inputtext-sm w-full' inputId="range" v-model="state.dates" selectionMode="range" :manualInput="false" :touchUI="true" dateFormat="dd.mm.yy"/>				  
+                      </div>
+					<!--/div-->
+					<h5 class='m-0 mb-3'>Бюджет (руб.)</h5>
+					<div class="formgrid grid">
+					  <div class="field col">
+						<InputText id="price_from" class='p-inputtext-sm' v-model="state.price_from" type="text" placeholder="От" />
 					  </div>
-					</div>
-
-                    <h5>Срок сдачи</h5>	
-					<div class="formgrid grid">
 					  <div class="field col">
-						<label for="range">Выберите интервал от и до</label>
-						<Calendar inputId="range" v-model="state.dates" selectionMode="range" :manualInput="false" :touchUI="true" dateFormat="dd.mm.yy"/>				  
-    				  </div>
-					</div>
-                    <h5>Бюджет (руб.)</h5>	
-					<div class="formgrid grid">
-					  <div class="field col">
-						<label for="price_from">От</label>
-						<InputText id="price_from" type="text" :value="state.price_from"/>				  
-    				  </div>
-					  <div class="field col">
-						<label for="price_to">До</label>
-						<InputText id="price_to" type="text" :value="state.price_to"/>				  
-    				  </div>					  
-					</div>
+						<InputText id="price_to" class='p-inputtext-sm' v-model="state.price_to" type="text" placeholder="До" />
+					  </div>							  
+				    </div>					
 					
-						<div class="field ">
+						<!--div class="field ">
 								<label for="frequency">Уточнить детали заказа</label>
 								авт. сохранение
 								Чат - сворачиваться экономия места
-						</div>
+						</div-->					
+						</template> 
+                        <template #footer>
+						  <Button label="Разместить заказ" class="p-button-success p-button-md p-2 text-md mr-2" @click="addOrder" icon="pi pi-check" :disabled="isSendButton"/>
+                          <Button label="Сбросить форму" class="p-button-secondary p-button-md p-2 text-md ml-2" @click="showAddOrder = !showAddOrder" icon="pi pi-check" />
+                        </template>               
+                        <!--div class="align-items-center justify-content-between mb-1 w-sm"-->
+                    </Card>		
+		
+	</div>	
+		
+		
+		
+		
+		
+		
+		
 
-					<div class="formgrid grid">					
-					<div class="field col">
-					    <Button label="Разместить заказ" @click="addOrder" icon="pi pi-check" class="p-button-success" :disabled="isSendButton"/>
-						<!--Button label="Субтитры" @click="showAddSubs = !showAddSubs" icon="pi pi-check" class="p-button-success" /-->
-                    </div>
-					<div class="field col">
-                        <Button label="Сбросить форму" @click="showAddOrder = !showAddOrder" icon="pi pi-check" class="p-button-secondary" />
-                    </div>
-						
-					</div>
-                </div>
-
-        </div>
 		
 		
     <div class="col-5 md:col-5">

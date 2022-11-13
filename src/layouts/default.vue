@@ -1,5 +1,29 @@
 <template>
-  <router-view />
+	<div :class="containerClass" @click="onWrapperClick">
+        <!--Sidebar v-model:visible="addAmbassadorOrder" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
+          <AddAmbassador />
+        </Sidebar>	
+        <Sidebar v-model:visible="addSupportTicket" :baseZIndex="10000" position="right" class="p-sidebar" style='width:60vw'>
+          <AddSupport />
+        </Sidebar-->			
+	
+        <AppTopBar @menu-toggle="onMenuToggle" />
+        <div class="layout-sidebar" @click="onSidebarClick">
+            <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
+        </div>
+
+        <div class="layout-main-container">
+            <div class="layout-main">
+                <router-view />
+            </div>
+            <AppFooter />
+        </div>
+
+		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" />
+        <transition name="layout-mask">
+            <div class="layout-mask p-component-overlay" v-if="mobileMenuActive"></div>
+        </transition>
+	</div>
 </template>
 
 <script async setup lang='ts'>
