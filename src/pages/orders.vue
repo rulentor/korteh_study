@@ -1,42 +1,34 @@
 <template>
-<div>
-      <div class="block-1">
-     <div class="HelloUser">Добро пожаловать Алексей</div>
-     <div class="events-time">
-      <div class="events">События за последнее время</div>
-      <div class="answer">На ваш заказ ответили <button class="btnanswer">посмотреть</button> </div>
-      <div class="completed-by">Ваш заказ был завершен исполнителем <button class="btncompleted">посмотреть</button>  </div>
-    </div>
-     <div class="advertisement">
-      <div class="advertisement1">Реклама партнера</div>
-      <div class="advertisement1">Реклама партнера</div>
-      <div class="advertisement1">Реклама партнера</div>
-     </div>
-     </div>
-
-
-     <div class="block-2">
+<div class="block-2" style="display: block;">
       <div class="HelloUser">Мои заказы</div>
       <div class="placement">
        <div class="orders"><div class="content-indicator"> <div class="indicator">Размещён</div><div class="price-indicator">По договорённости</div>  </div>
        <div class="text-order">Написать курсовую работу на тему</div>
-       <div class="content-indicator2"> <div class="indicator-options"><button class="btn-delet">Удалить</button><button class="btn-change">Изменить заказ</button></div><div class="author-sugg">Предложения автора</div> 
+       <div class="content-indicator2"> <div class="indicator-options"><Button class="btn-delet">Удалить</Button><Button class="btn-change" @click="updateOrder('00001')">Изменить заказ</Button></div><div class="author-sugg">Предложения автора</div> 
       </div>
       </div>
       <div class="orders"><div class="content-indicator"> <div class="indicator3">Завершен</div><div class="price-indicator">5700₽</div>  </div>
       <div class="text-order">Написать курсовую работу на тему</div>
-      <div class="content-indicator2"> <div class="indicator-options"><button class="btn-delet">Удалить</button><button class="btn-change">Изменить заказ</button></div><div class="author-sugg">Предложения автора</div> 
+      <div class="content-indicator2"> <div class="indicator-options"><Button class="btn-delet">Удалить</Button><Button class="btn-change" @click="updateOrder('00002')">Изменить заказ</Button></div><div class="author-sugg">Предложения автора</div> 
      </div>
      </div>
-     <div class="orders"><div class="content-indicator"> <div class="indicator2">В работе</div><div class="price-indicator">3400₽</div>  </div>
+	 <!-- order -->
+     <div class="orders">
+	   <div class="content-indicator"> 
+	     <div class="indicator2">В работе</div>
+		 <div class="price-indicator">3400₽</div>  
+	  </div>
      <div class="text-order">Написать курсовую работу на тему</div>
-     <div class="content-indicator2"> <div class="indicator-options"><button class="btn-delet">Удалить</button><button class="btn-change">Изменить заказ</button></div><div class="author-sugg">Предложения автора</div> 
+     <div class="content-indicator2"> 
+	   <div class="indicator-options">
+	     <Button class="btn-delet">Удалить</Button>
+		 <Button class="btn-change" @click="updateOrder('00003')">Изменить заказ</Button>
+	   </div>
+	   <div class="author-sugg">Предложения автора</div> 
     </div>
     </div>
      </div>
-      
-      </div>
-</div>	  
+</div>
 </template>
 <script async setup lang='ts'>
 import { ref, reactive, onMounted } from 'vue'
@@ -94,12 +86,16 @@ const responsiveOptions = ref([
  }
 ])
 
+
   onMounted(
     async () => { 
 	  //if(initState()) init()
 	}
   )
 const cookies = useCookies(['locale']) 
+const updateOrder = (id) => {
+  router.push(`/forms/${encodeURIComponent(id)}`)
+}
 </script>
 <style scoped>
 input, textarea{width:100% !important;}

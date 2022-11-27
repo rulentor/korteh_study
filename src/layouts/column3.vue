@@ -1,19 +1,25 @@
 <template>
-	<div :class="containerClass" @click="onWrapperClick">
-        <div class="layout-sidebar" @click="onSidebarClick">
-            <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
-        </div>	
-	    <div class='content-page layout-main-container'>
-		  <div class='content layout-main'>
-		    <AppTopBar @menu-toggle="onMenuToggle" />
+  <!--div :class="containerClass" @click="onWrapperClick"-->
+    <div class="layout has-sidebar fixed-sidebar fixed-header" @click="onSidebarClick">
+      <AppMenu :model="menu" @menuitem-click="onMenuItemClick" />
+
+        <div id="overlay" class="overlay"></div>
+		<div class="layout">
+		<AppTopBar @menu-toggle="onMenuToggle" />
+        <main class="content">
             <router-view />
 		    <transition name="layout-mask">
              <div class="layout-mask p-component-overlay" v-if="mobileMenuActive"></div>
-            </transition>			
+            </transition>
+            <AppFooter />			
+        </main>		
+	    <!--div class='content-page layout-main-container'>
+		  <div class='content layout-main'>
+		
 		  </div>
-		</div>
-	
-	
+		</div-->
+    <AppRightBar />	
+    <div class="overlay"></div>	
         <!--AppTopBar @menu-toggle="onMenuToggle" />
 
         <div class="layout-main-container">
@@ -26,6 +32,7 @@
 		<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" /-->
 
 	</div>
+</div>	
 </template>
 
 <script async setup lang='ts'>
@@ -61,7 +68,7 @@ const menuData = [
 						},						
 						{   label: 'Мои заказы', 
 						    icon: 'pi pi-fw pi-book', 
-							to: '/tasks'
+							to: '/orders'
 						},
 
 					

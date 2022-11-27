@@ -4,11 +4,16 @@
             <li
                 v-if="visible(item) && !item.separator"
                 :key="item.label || i"
-                :class="[{ 'layout-menuitem-category': root, 'active-menuitem': activeIndex === i && !item.to && !item.disabled }]"
+                :class="[{ 'menu-item': root, 'active-menuitem': activeIndex === i && !item.to && !item.disabled }]"
                 role="none"
             >
                 <template v-if="root">
-                    <div class="layout-menuitem-root-text">{{ item.label }}</div>
+                  <span class="menu-icon">
+                    <i class="ri-book-2-fill"></i>
+                  </span>
+                  <div class="knopka-3">
+                    <span class="menu-title">{{ item.label }}</span>
+                  </div>					
                     <AppSubmenu :items="visible(item) && item.items" @menuitem-click="$emit('menuitem-click', $event)"></AppSubmenu>
                 </template>
                 <template v-else>
@@ -23,10 +28,16 @@
                         role="menuitem"
                         v-ripple
                     >
-                        <i :class="item.icon"></i>
-                        <span>{{ item.label }}</span>
-                        <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
-                        <span v-if="item.badge" class="menuitem-badge">{{ item.badge }}</span>
+				  <span class="menu-icon">
+                    <i :class="item.icon"></i>
+					<span class="menu-title">{{ item.label }}</span>
+                  </span>
+                  <div class="knopka-3">
+                    <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
+					<!--i v-else class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i-->
+                    <span v-if="item.badge" class="menu-title">{{ item.badge }}</span>
+					<span v-else class="menu-title">{{ item.label }}</span>
+                  </div>
                     </router-link>
                     <a
                         v-if="!item.to"
@@ -38,10 +49,15 @@
                         role="menuitem"
                         v-ripple
                     >
-                        <i :class="item.icon"></i>
-                        <span>{{ item.label }}</span>
-                        <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
-                        <span v-if="item.badge" class="menuitem-badge">{{ item.badge }}</span>
+				  <span class="menu-icon">
+                    <i :class="item.icon"></i>
+					<span>{{ item.label }}</span>
+                  </span>
+                  <div class="knopka-1">
+                    <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
+                    <span v-if="item.badge" class="menuitem-badge menu-title">{{ item.badge }}</span>
+                  </div>					
+					
                     </a>
                     <transition name="layout-submenu-wrapper">
                         <AppSubmenu
