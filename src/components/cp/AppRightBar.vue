@@ -30,7 +30,7 @@
                           <ul>
                             <li>
                               <div class="frends">
-                                <img class="avatar" src="avatar-1.jpg">
+                                <img class="avatar" src="/images/avatar-1.jpg"/>
                                 <div>
                                 <div class="name-frends"> Nick Paten</div>
                                 <div class="chat-casper">Brandon Smith
@@ -40,7 +40,7 @@
                             </li>
                             <li>
                                     <div class="frends">
-                                      <img class="avatar" src="avatar-1.jpg">
+                                      <img class="avatar" src="/images/avatar-1.jpg"/>
                                       <div>
                                       <div class="name-frends"> Nick Paten</div>
                                       <div class="chat-casper">Brandon Smith
@@ -50,7 +50,7 @@
                             </li>
                             <li>
                                           <div class="frends">
-                                            <img class="avatar" src="avatar-1.jpg">
+                                            <img class="avatar" src="/images/avatar-1.jpg"/>
                                             <div>
                                             <div class="name-frends"> Nick Paten</div>
                                             <div class="chat-casper">Are we going to have this week's planning meeting today?</div></div>
@@ -59,7 +59,7 @@
                             </li>
                             <li>
                                                 <div class="frends">
-                                                  <img class="avatar" src="avatar-1.jpg">
+                                                  <img class="avatar" src="/images/avatar-1.jpg"/>
                                                   <div>
                                                   <div class="name-frends"> Nick Paten</div>
                                                   <div class="chat-casper">Brandon Smith
@@ -69,7 +69,7 @@
                             </li>
                             <li>
                                                       <div class="frends">
-                                                        <img class="avatar" src="avatar-1.jpg">
+                                                        <img class="avatar" src="/images/avatar-1.jpg"/>
                                                         <div>
                                                         <div class="name-frends"> Nick Paten</div>
                                                         <div class="chat-casper">Brandon Smith
@@ -79,7 +79,7 @@
                             </li>
                             <li>
                                                             <div class="frends">
-                                                              <img class="avatar" src="avatar-1.jpg">
+                                                              <img class="avatar" src="/images/avatar-1.jpg"/>
                                                               <div>
                                                               <div class="name-frends"> Nick Paten</div>
                                                               <div class="chat-casper">Brandon Smith
